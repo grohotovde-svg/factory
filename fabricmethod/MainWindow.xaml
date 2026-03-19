@@ -1,4 +1,4 @@
-﻿<Window x:Class="fabricmethod.MainWindow"
+<Window x:Class="fabricmethod.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,21 +6,14 @@
         xmlns:local="clr-namespace:fabricmethod"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        <ComboBox Grid.Row="0" Grid.Column="1" Height="30" VerticalAlignment="Top"/>
-        <StackPanel Grid.Row="0" Grid.Column="1" Height="30" VerticalAlignment="Top" Margin="30"/>
-
-    </Grid>
+    <StackPanel Margin="10">
+        <ComboBox x:Name="ColorComboBox" SelectionChanged="ColorComboBox_SelectionChanged">
+            <ComboBoxItem Content="Красный"/>
+            <ComboBoxItem Content="Синий"/>
+            <ComboBoxItem Content="Зелёный"/>
+            <ComboBoxItem Content="Красная фабрика"/>
+        </ComboBox>
+        <Button Content="Создать наборы фигур" Click="AddFigures_Click" Margin="0,10,0,10"/>
+        <WrapPanel x:Name="DrawingPanel" />
+    </StackPanel>
 </Window>
